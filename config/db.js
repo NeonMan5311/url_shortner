@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
-export async function connectToDB(params) {
+export async function connectToDB() {
     try{
-        const connec=await mongoose.connect("mongodb+srv://dhengleyadav:Yadav123@cluster0.gzezcao.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+        const connec=await mongoose.connect(process.env.MONGO_URI)
     }catch(error){
         console.log(error)
         process.exit(1)
     }
+
 } 
