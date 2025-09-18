@@ -6,7 +6,13 @@ import { connectToDB } from "./config/db.js";
 import {router} from "./routes/indexRouter.js";
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "bit-short.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
+}));
 app.use(express.json());
 connectToDB();
 const PORT = 3000;
@@ -19,3 +25,4 @@ app.use("/", router);
 app.listen(PORT, () => {
 	console.log(`Server running at http://localhost:${PORT}`);
 });
+
