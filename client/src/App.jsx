@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./App.css";
-import isURL from 'validator/es/lib/isURL';
+import validator from 'validator';
 
 const API_URL = "http://localhost:3000/";
 function App() {
@@ -11,7 +11,7 @@ function App() {
 	const handleChange = (e) => {
 		const { value } = e.target;
 		setformData(value);
-		seturlCheck(isUrl(value));
+		seturlCheck(validator.isUrl(value));
 		console.log(value);
 		console.log(urlCheck);
 	};
