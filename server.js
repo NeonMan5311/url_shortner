@@ -6,8 +6,8 @@ import { connectToDB } from "./config/db.js";
 import {router} from "./routes/indexRouter.js";
 dotenv.config();
 const app = express();
-app.use(cors()); // allow all origins temporarily
-app.options("*", cors()); // handle preflight
+app.options(/.*/, cors()); 
+
 
 app.use(express.json());
 connectToDB();
@@ -21,6 +21,7 @@ app.use("/", router);
 app.listen(PORT, () => {
 	console.log(`Server running at http://localhost:${PORT}`);
 });
+
 
 
 
