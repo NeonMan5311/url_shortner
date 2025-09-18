@@ -8,7 +8,15 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.options(/.*/, cors()); 
-
+app.use((req, res, next) => {
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Origin", req.headers.origin || "*");
+    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    return res.sendStatus(200); // ✅ not 204
+  }
+  next();
+});
 
 app.use(express.json());
 connectToDB();
@@ -22,6 +30,7 @@ app.use("/", router);
 app.listen(PORT, () => {
 	console.log(`Server running at http://localhost:${PORT}`);
 });
+
 
 
 
