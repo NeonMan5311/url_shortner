@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import validator from 'validator';
 
-const API_URL = "http://localhost:3000/";
+const API_URL = "https://www.bit-short-url.vercel.app/";
 function App() {
 	const [formData, setformData] = React.useState("");
 	const [urlCheck, seturlCheck] = React.useState(false);
