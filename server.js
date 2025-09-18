@@ -6,6 +6,7 @@ import { connectToDB } from "./config/db.js";
 import {router} from "./routes/indexRouter.js";
 dotenv.config();
 const app = express();
+app.use(cors());
 app.options(/.*/, cors()); 
 
 
