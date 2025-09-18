@@ -14,7 +14,7 @@ export async function shortner(req, res) {
 			id,
 		});
 		await newURL.save();
-		const redUrl = "http://localhost:3000/" + id;
+		const redUrl = "https://www.bit-short-url.vercel.app/" + id;
 		res.send(redUrl);
 	} catch (err) {
 		console.log(err);
@@ -31,3 +31,4 @@ export async function redirect(req, res) {
 		res.redirect("/");
 	}
 }
+
