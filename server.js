@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 app.use(cors({
   origin: [
-    "bit-short.vercel.app"
+    "https://www.bit-short.vercel.app"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
@@ -25,4 +25,5 @@ app.use("/", router);
 app.listen(PORT, () => {
 	console.log(`Server running at http://localhost:${PORT}`);
 });
+
 
