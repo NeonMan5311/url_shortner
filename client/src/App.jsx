@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import validator from 'validator';
 
-const API_URL = "https://www.bit-short-url.vercel.app?_vercel_bypass_token=Bx8Dt0M7aoA6s7J9M4c5KzRNwHITdkCi";
+const API_URL = "https://www.bit-short-url.vercel.app";
 function App() {
 	const [formData, setformData] = React.useState("");
 	const [urlCheck, seturlCheck] = React.useState(false);
