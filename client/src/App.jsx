@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import validator from 'validator';
 
-const API_URL = "https://www.bit-short-url.vercel.app";
+const API_URL = "https://url-shortner-42b3.onrender.com";
 function App() {
 	const [formData, setformData] = React.useState("");
 	const [urlCheck, seturlCheck] = React.useState(false);
