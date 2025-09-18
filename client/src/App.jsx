@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./App.css";
-import isUrl from "validator/lib/isURL.js";
+import isURL from 'validator/es/lib/isURL';
 
 const API_URL = "http://localhost:3000/";
 function App() {
