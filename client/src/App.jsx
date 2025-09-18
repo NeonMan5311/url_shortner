@@ -11,7 +11,7 @@ function App() {
 	const handleChange = (e) => {
 		const { value } = e.target;
 		setformData(value);
-		seturlCheck(validator.isUrl(value));
+		seturlCheck(validator.isURL(value));
 		console.log(value);
 		console.log(urlCheck);
 	};
